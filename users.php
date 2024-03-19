@@ -29,6 +29,7 @@ include("sessions.php");
                         <th>Username</th>
                         <th>Password</th>
                         <th>Tel</th>
+                        <th>Role</th>
                         <th>Actions</th>
                     </tr>
                     <?php
@@ -42,6 +43,7 @@ include("sessions.php");
                         <td><?php echo $row['username'];?></td>
                         <td><?php echo $row['password'];?></td>
                         <td><?php echo $row['tel'];?></td>
+                        <td><?php echo $row['role'];?></td>
                         <td>
                             <a href="#">Edit</a>
                             <a href="delete_user.php?user_id=<?php echo $row['user_id'];?>">Delete</a>

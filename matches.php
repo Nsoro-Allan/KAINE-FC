@@ -47,8 +47,8 @@ include("sessions.php");
                         <td>
                             <?php
                              $ref_id=$row['ref_id'];
-                             $select=$con->query("SELECT * FROM `referees` WHERE `ref_id`='$ref_id'");
-                             $ref=mysqli_fetch_assoc($select);
+                             $select1=$con->query("SELECT * FROM `referees` WHERE `ref_id`='$ref_id'");
+                             $ref=mysqli_fetch_assoc($select1);
                              $f_name=$ref['f_name'];
                              $l_name=$ref['l_name'];
                              echo $f_name;echo $l_name;
@@ -57,8 +57,8 @@ include("sessions.php");
                         <td>
                             <?php
                              $ad_id=$row['ad_id'];
-                             $select=$con->query("SELECT * FROM `adversaries` WHERE `ad_id`='$ad_id'");
-                             $ad=mysqli_fetch_assoc($select);
+                             $select2=$con->query("SELECT * FROM `adversaries` WHERE `ad_id`='$ad_id'");
+                             $ad=mysqli_fetch_assoc($select2);
                              $name=$ad['name'];
                              echo $name;
                             ?>
@@ -66,8 +66,8 @@ include("sessions.php");
                         <td>
                         <?php
                              $user_id=$row['user_id'];
-                             $select=$con->query("SELECT * FROM `users` WHERE `user_id`='$user_id'");
-                             $user=mysqli_fetch_assoc($select);
+                             $select3=$con->query("SELECT * FROM `users` WHERE `user_id`='$user_id'");
+                             $user=mysqli_fetch_assoc($select3);
                              $username=$user['username'];
                              echo $username;
                             ?>
