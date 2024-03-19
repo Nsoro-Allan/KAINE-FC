@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100dvh;
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+}
+
+.login-left img {
+  width: 70%;
+  border-radius: 20px;
+}
+
+.login-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+  background: #068584;
+}
+
+.login-right .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-right .title h1 {
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.login-right .title .line {
+  padding: 3.2px;
+  width: 40%;
+  background: #068584;
+  border-radius: 50px;
+}
+
+.login-right form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  width: 75%;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.login-right form .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login-right form .content label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.login-right form .content input {
+  padding: 6px;
+  width: 100%;
+  margin-top: 5px;
+  outline-color: #068584;
+  font-size: 0.8rem;
+}
+
+::placeholder {
+  color: black;
+  font-size: 0.8rem;
+}
+
+.login-right form .content button {
+  padding: 8px;
+  width: 100%;
+  margin-top: 15px;
+  background: #068584;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+
+.login-right form .content p {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.login-right form .content p a {
+  color: black;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 3px solid #068584; */
+  height: 100dvh;
+}
+
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 16%;
+  background: #068584;
+  color: #fff;
+  height: 100dvh;
+}
+
+.dashboard-left .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dashboard-left .title img {
+  width: 30%;
+}
+
+.dashboard-left .title h1 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.dashboard-left .links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.dashboard-left .links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.dashboard-left .end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  width: 90%;
+  padding: 5px;
+}
+
+.dashboard-left .end p {
+  border-style: dashed;
+  padding: 8px 15px;
+  width: 100%;
+  border-radius: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.dashboard-left .end a {
+  text-decoration: none;
+  background: #fff;
+  color: #068584;
+  padding: 8px 15px;
+  width: 100%;
+  border-radius: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 9px;
+}
+
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  border: 3px solid #068584;
+  height: 100dvh;
+}
+
+.right-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-title h1 {
+  font-size: 2rem;
+}
+
+.right-title .line {
+  padding: 3px;
+  background: #068584;
+  width: 10%;
+  border-radius: 50px;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.right-content .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 20px;
+}
+
+.right-content .buttons a {
+  padding: 8px 15px;
+  background: #068584;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.right-content .buttons a:hover {
+  cursor: pointer;
+  background: #068585ba;
+  transition: 0.3s ease-in-out;
+}
+
+.right-content table {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.right-content table tr {
+  padding: 5px;
+}
+
+.right-content table tr:nth-child(odd) {
+  background: #06858577;
+}
+
+.right-content table tr th {
+  padding: 8px;
+  background: #068584;
+  color: #fff;
+}
+
+.right-content table tr td {
+  padding: 8px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.right-content table tr td a {
+  padding: 5px 15px;
+  background: #068584;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  border-radius: 6px;
+}
+
+.right-content table tr td a:hover {
+  background: #068585ba;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.right-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 2px solid #068584;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.right-content form label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.right-content form input {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1.5px solid black;
+  outline-color: #068584;
+}
+
+.right-content form select {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1.5px solid black;
+  outline-color: #068584;
+}
+
+.right-content form button {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  padding: 8px;
+  width: 20%;
+  border-radius: 6px;
+  border: none;
+  background: #068584;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.right-content form button:hover {
+  background: #068585ba;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
