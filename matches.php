@@ -44,9 +44,34 @@ include("sessions.php");
                     <tr>
                         <td><?php echo $row['date'];?></td>
                         <td><?php echo $row['play_ground'];?></td>
-                        <td><?php echo $row['ref_id'];?></td>
-                        <td><?php echo $row['ad_id'];?></td>
-                        <td><?php echo $row['user_id'];?></td>
+                        <td>
+                            <?php
+                             $ref_id=$row['ref_id'];
+                             $select=$con->query("SELECT * FROM `referees` WHERE `ref_id`='$ref_id'");
+                             $ref=mysqli_fetch_assoc($select);
+                             $f_name=$ref['f_name'];
+                             $l_name=$ref['l_name'];
+                             echo $f_name;echo $l_name;
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                             $ad_id=$row['ad_id'];
+                             $select=$con->query("SELECT * FROM `adversaries` WHERE `ad_id`='$ad_id'");
+                             $ad=mysqli_fetch_assoc($select);
+                             $name=$ad['name'];
+                             echo $name;
+                            ?>
+                        </td>
+                        <td>
+                        <?php
+                             $user_id=$row['user_id'];
+                             $select=$con->query("SELECT * FROM `users` WHERE `user_id`='$user_id'");
+                             $user=mysqli_fetch_assoc($select);
+                             $username=$user['username'];
+                             echo $username;
+                            ?>
+                        </td>
                         <td>
                             <a href="#">Edit</a>
                             <a href="delete_match.php?mt_id=<?php echo $row['mt_id'];?>">Delete</a>

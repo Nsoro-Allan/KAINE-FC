@@ -154,23 +154,47 @@ body {
 }
 
 .dashboard-left .title h1 {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   text-transform: capitalize;
   font-style: italic;
+}
+
+.dashboard-left .title .line {
+  padding: 3.1px;
+  width: 50%;
+  margin-top: 5px;
+  background: #fff;
+  border-radius: 50px;
 }
 
 .dashboard-left .links {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 25px;
+  justify-content: center;
+  gap: 30px;
 }
 
 .dashboard-left .links a {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in;
+}
+
+.dashboard-left .links a:hover {
+  cursor: pointer;
+  color: #ffffff77;
+  transition: 0.2s ease-in;
+}
+
+.dashboard-left .links a img {
+  width: 15%;
+  margin-right: 10px;
 }
 
 .dashboard-left .end {
@@ -185,7 +209,7 @@ body {
 
 .dashboard-left .end p {
   border-style: dashed;
-  padding: 8px 15px;
+  padding: 6px 15px;
   width: 100%;
   border-radius: 50px;
   text-align: center;

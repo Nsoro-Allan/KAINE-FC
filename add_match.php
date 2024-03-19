@@ -2,18 +2,27 @@
 include("connection.php");
 include("sessions.php");
 
-if(isset($_POST['add_adversarie'])){
-    $name=mysqli_real_escape_string($con, $_POST['name']);
+$uname=$_SESSION['fc_user'];
+$select3=$con->query("SELECT * FROM `users` WHERE `username`='$uname'");
+$view=mysqli_fetch_assoc($select3);
+$u_id=$view['user_id'];
 
-        $insert=$con->query("INSERT INTO `adversaries` (`ad_id`, `name`) VALUES ('','$name')");
+if(isset($_POST['add_match'])){
+    $date=mysqli_real_escape_string($con, $_POST['date']);
+    $play_ground=mysqli_real_escape_string($con, $_POST['play_ground']);
+    $ref_id=mysqli_real_escape_string($con, $_POST['ref_id']);
+    $ad_id=mysqli_real_escape_string($con, $_POST['ad_id']);
+    $user_id=$u_id;
+
+        $insert=$con->query("INSERT INTO `matches`(`mt_id`, `date`, `play_ground`, `ref_id`, `ad_id`, `user_id`) VALUES ('','$date','$play_ground','$ref_id','$ad_id','$user_id')");
         if($insert){
-            header("Location: adversaries.php");
+            header("Location: matches.php");
         }
         else{
             echo
             "
                 <script>
-                    alert('Failed to add new adversarie...');
+                    alert('Failed to add new match...');
                 </script>
             ";
         }
@@ -49,10 +58,26 @@ if(isset($_POST['add_adversarie'])){
                     <label>Match Referee:</label>
                     <select name="ref_id">
                         <option value="Select your match referee...">Select your match referee...</option>
+                        <?php
+                        $select1=$con->query("SELECT * FROM `referees`");
+                        while($referee=mysqli_fetch_assoc($select1)){
+                        ?>
+                        <option value="<?php echo $referee['ref_id'];?>"><?php echo $referee['f_name'];?><?php echo $referee['l_name'];?></option>
+                        <?php    
+                        }
+                        ?>
                     </select>
                     <label>Match Adversarie:</label>
                     <select name="ad_id">
-                        <option value="Select your match referee...">Select your match referee...</option>
+                        <option value="Select your match referee...">Select your match adversarie...</option>
+                        <?php
+                        $select2=$con->query("SELECT * FROM `adversaries`");
+                        while($adversarie=mysqli_fetch_assoc($select2)){
+                        ?>
+                        <option value="<?php echo $adversarie['ad_id'];?>"><?php echo $adversarie['name'];?></option>
+                        <?php    
+                        }
+                        ?>
                     </select>
                     <button type="submit" name="add_match">Add Match...</button>
                 </form>
