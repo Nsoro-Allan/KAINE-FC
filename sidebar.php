@@ -10,6 +10,7 @@
     <a href="./adversaries.php"><img src="./imgs/adversarie.ico" alt=""> Adversaries</a>
     <a href="./referees.php"><img src="./imgs/referees.ico" alt=""> Referees</a>
     <a href="./users.php"><img src="./imgs/users.ico" alt=""> Users</a>
+    <a href="./report.php"><img src="./imgs/report.ico" alt=""> Report</a>
     <a href="./settings.php"><img src="./imgs/settings.ico" alt=""> Settings</a>
 </div>
 <div class="end">

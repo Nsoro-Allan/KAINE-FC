@@ -9,6 +9,32 @@ $row=mysqli_fetch_assoc($select);
 $username=$row['username'];
 $password=$row['password'];
 
+// Update Data
+if(isset($_POST['update_account'])){
+    $username=mysqli_real_escape_string($con,$_POST['username']);
+    $password=mysqli_real_escape_string($con,$_POST['password']);
+
+    $update=$con->query("UPDATE `users` SET `username`='$username', `password`='$password' WHERE `username`='$uname'");
+
+    if($update){
+        $_SESSION['fc_user']=$username;
+        echo
+        "
+            <script>
+                alert('Just Updated your account...');
+            </script>
+        ";
+    }
+    else{
+        echo
+        "
+            <script>
+                alert('Failed to update account...');
+            </script>
+        ";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>

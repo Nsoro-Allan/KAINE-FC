@@ -172,7 +172,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
 }
 
 .dashboard-left .links a {
