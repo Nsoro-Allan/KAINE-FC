@@ -63,7 +63,7 @@ if(isset($_POST['login'])){
 <body>
     <div class="login-container">
         <div class="login-left">
-            <img src="./imgs/img1.jpeg" alt="">
+            <img src="./imgs/img1.jpg" alt="">
         </div>
         <div class="login-right">
             <form action="" method="post">

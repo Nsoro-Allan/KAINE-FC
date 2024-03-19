@@ -62,7 +62,7 @@ include("sessions.php");
                 <div class="line"></div>
                 </div>
                 <?php
-                    $select=$con->query("SELECT * FROM `matches` ORDER BY mt_id DESC");
+                    $select=$con->query("SELECT * FROM `matches` ORDER BY mt_id DESC LIMIT 10");
                     if(mysqli_num_rows($select)>0){
                         while($row=mysqli_fetch_assoc($select)){
                 ?>
@@ -80,7 +80,7 @@ include("sessions.php");
                         ?></h4>
                     </div>
                     <div class="match-description">
-                        <p>At <?php echo $row['play_ground'];?> Playground on <?php echo $row['date'];?>.</p>
+                        <p>At <?php echo $row['play_ground'];?> Playground On <?php echo $row['date'];?>.</p>
                     </div>
                 </div>
 
