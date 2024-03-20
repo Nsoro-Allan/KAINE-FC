@@ -2,22 +2,15 @@
 include("connection.php");
 include("sessions.php");
 
-if(isset($_POST['add_adversarie'])){
-    $name=mysqli_real_escape_string($con, $_POST['name']);
+$user_id=$_GET['user_id'];
 
-        $insert=$con->query("INSERT INTO `adversaries` (`ad_id`, `name`) VALUES ('','$name')");
-        if($insert){
-            header("Location: adversaries.php");
-        }
-        else{
-            echo
-            "
-                <script>
-                    alert('Failed to add new adversarie...');
-                </script>
-            ";
-        }
-}
+// Select Data
+$select=$con->query("SELECT * FROM `users` WHERE `user_id`='$user_id'");
+$row=mysqli_fetch_assoc($select);
+$username=$row['username'];
+$password=$row['password'];
+$tel=$row['tel'];
+$role=$row['role'];
 
 ?>
 
@@ -49,7 +42,7 @@ if(isset($_POST['add_adversarie'])){
                     <label>Tel:</label>
                     <input type="text" name="tel" value="<?php echo $tel;?>" required>
                     <label>Role:</label>
-                    <input type="text" name="role" value="<?php echo $tel;?>" required>
+                    <input type="text" name="role" value="<?php echo $role;?>" required>
                     <button type="submit" name="edit_user">Edit User...</button>
                 </form>
             </div>
