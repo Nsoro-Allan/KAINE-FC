@@ -36,7 +36,7 @@ include("sessions.php");
                         <th>Actions</th>
                     </tr>
                     <?php
-                    $select=$con->query("SELECT * FROM `matches`");
+                    $select=$con->query("SELECT * FROM `matches` ORDER BY mt_id DESC");
                     if(mysqli_num_rows($select)>0){
                         while($row=mysqli_fetch_assoc($select)){
                     ?>
@@ -73,7 +73,7 @@ include("sessions.php");
                             ?>
                         </td>
                         <td>
-                            <a href="#">Edit</a>
+                            <a href="edit_match.php?mt_id=<?php echo $row['mt_id'];?>">Edit</a>
                             <a href="delete_match.php?mt_id=<?php echo $row['mt_id'];?>">Delete</a>
                         </td>
                     </tr>

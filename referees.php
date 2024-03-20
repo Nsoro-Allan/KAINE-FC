@@ -36,7 +36,7 @@ include("sessions.php");
                         <th>Actions</th>
                     </tr>
                     <?php
-                    $select=$con->query("SELECT * FROM `referees`");
+                    $select=$con->query("SELECT * FROM `referees` ORDER BY ref_id DESC");
                     if(mysqli_num_rows($select)>0){
                         while($row=mysqli_fetch_assoc($select)){
                     ?>
