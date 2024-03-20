@@ -45,7 +45,7 @@ include("sessions.php");
                         <td><?php echo $row['tel'];?></td>
                         <td><?php echo $row['role'];?></td>
                         <td>
-                            <a href="#">Edit</a>
+                            <a href="edit_user.php?user_id=<?php echo $row['user_id'];?>">Edit</a>
                             <a href="delete_user.php?user_id=<?php echo $row['user_id'];?>">Delete</a>
                         </td>
                     </tr>

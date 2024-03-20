@@ -5,6 +5,9 @@ if(isset($_POST['register'])){
     $username=mysqli_real_escape_string($con,$_POST['username']);
     $password=mysqli_real_escape_string($con,$_POST['password']);
     $tel=mysqli_real_escape_string($con,$_POST['tel']);
+    $role=mysqli_real_escape_string($con,$_POST['role']);
+
+    if($role != "Select Role..."){
 
     $insert=$con->query("INSERT INTO `users` VALUES('','$username','$password','$tel')");
 
@@ -17,6 +20,17 @@ if(isset($_POST['register'])){
         "
             <script>
                 alert('Failed to create account...');
+            </script>
+        ";
+    }
+
+    }
+
+    else{
+        echo
+        "
+            <script>
+                alert('Please select a role...');
             </script>
         ";
     }
@@ -51,6 +65,14 @@ if(isset($_POST['register'])){
                 <input type="password" placeholder="Enter your password..." name="password" required>
                 <label>Tel:</label>
                 <input type="tel" placeholder="Enter your tel..." name="tel" required>
+                <label>Role:</label>
+                <select name="role">
+                    <option value="Select Role...">Select Role...</option>
+                    <option>Admin</option>
+                    <option>Manager</option>
+                    <option>Accountant</option>
+                    <option>Secretary</option>
+                </select>
                 <button type="submit" name="register">Register</button>
                 <p>Already Have An Account? <a href="./index.php">Login</a>.</p>
                 </div>
