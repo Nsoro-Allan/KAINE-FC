@@ -40,7 +40,7 @@ include("sessions.php");
                     <tr>
                         <td><?php echo $row['name'];?></td>
                         <td>
-                            <a href="#">Edit</a>
+                            <a href="edit_adversarie.php?ad_id=<?php echo $row['ad_id'];?>">Edit</a>
                             <a href="delete_adversarie.php?ad_id=<?php echo $row['ad_id'];?>">Delete</a>
                         </td>
                     </tr>

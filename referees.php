@@ -48,7 +48,7 @@ include("sessions.php");
                         <td><?php echo $row['gender'];?></td>
                         <td><?php echo $row['tel'];?></td>
                         <td>
-                            <a href="#">Edit</a>
+                            <a href="edit_referee.php?ref_id=<?php echo $row['ref_id'];?>">Edit</a>
                             <a href="delete_referee.php?ref_id=<?php echo $row['ref_id'];?>">Delete</a>
                         </td>
                     </tr>
