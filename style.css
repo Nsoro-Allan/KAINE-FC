@@ -60,6 +60,7 @@ body {
   width: 40%;
   background: #068584;
   border-radius: 50px;
+  margin-top: 3px;
 }
 
 .login-right form {
@@ -96,6 +97,14 @@ body {
   font-size: 0.8rem;
 }
 
+.login-right form .content select {
+  padding: 6px;
+  width: 100%;
+  margin-top: 5px;
+  outline-color: #068584;
+  font-size: 0.8rem;
+}
+
 ::placeholder {
   color: black;
   font-size: 0.8rem;
@@ -109,6 +118,13 @@ body {
   color: #fff;
   border: none;
   font-weight: bold;
+  transition: 0.3s ease-in;
+}
+
+.login-right form .content button:hover {
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  background: #068585ba;
 }
 
 .login-right form .content p {
@@ -119,6 +135,13 @@ body {
 
 .login-right form .content p a {
   color: black;
+  transition: 0.2s ease-in;
+}
+
+.login-right form .content p a:hover {
+  color: #068584;
+  cursor: pointer;
+  transition: 0.2s ease-in;
 }
 
 .dashboard-container {
@@ -127,7 +150,6 @@ body {
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  /* border: 3px solid #068584; */
   height: 100dvh;
 }
 

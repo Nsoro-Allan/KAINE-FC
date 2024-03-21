@@ -7,34 +7,41 @@ if(isset($_POST['register'])){
     $tel=mysqli_real_escape_string($con,$_POST['tel']);
     $role=mysqli_real_escape_string($con,$_POST['role']);
 
-    if($role != "Select Role..."){
+ if($role != "Select Role..."){
 
-    $insert=$con->query("INSERT INTO `users` VALUES('','$username','$password','$tel')");
+    // Select Data
+    $select=$con->query("SELECT * FROM `users`");
+    $view=mysqli_fetch_assoc($select);
+    $db_username=$view['username'];
 
-    if($insert){
-        header("Location: index.php");
-    }
+    $insert=$con->query("INSERT INTO `users` VALUES('','$username','$password','$tel','$role')");
 
-    else{
-        echo
-        "
-            <script>
-                alert('Failed to create account...');
-            </script>
-        ";
-    }
+        if($insert){
+            header("Location: index.php");
+        }
 
-    }
+        else{
+            echo
+            "
+                <script>
+                    alert('Failed to create account...');
+                </script>
+            ";
+        }
 
-    else{
-        echo
-        "
-            <script>
-                alert('Please select a role...');
-            </script>
-        ";
-    }
+        }
+
+        else{
+            echo
+            "
+                <script>
+                    alert('Please select a role...');
+                </script>
+            ";
+        }
+
 }
+
 
 ?>
 
